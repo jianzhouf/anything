@@ -1,7 +1,8 @@
-#基于remaxjs实现的支付宝小程序海报
+## 基于remaxjs实现的支付宝小程序海报
 
 
 ```tsx
+// index.ali.tsx
 import React, {
   forwardRef,
   useEffect,
@@ -209,4 +210,28 @@ const CreatePoster = forwardRef<CreatePosterMethods, CreatePosterProps>(
 
 export default CreatePoster;
 
+```
+
+```tsx
+//index.tsx
+import React from "react";
+
+export interface CreatePosterProps {
+  imgUrl: string;
+  title: string;
+}
+export interface TempFilePathRes {
+  apFilePath: string;
+  filePath: string;
+}
+export interface CreatePosterMethods {
+  save(callback?: () => void): void;
+  getTempFilePath(): Promise<TempFilePathRes>;
+}
+declare const CreatePoster: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<CreatePosterProps> &
+    React.RefAttributes<CreatePosterMethods>
+>;
+
+export default CreatePoster;
 ```
