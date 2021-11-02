@@ -17,3 +17,20 @@ reactStringReplace('Apt 111, phone number 5555555555.', /(\d+)/g, (match, i) => 
 //   '.'
 // ]
 ```
+
+## babel macros
+https://github.com/jgierer12/awesome-babel-macros
+
+```js
+//hooks.macro
+
+import { useAutoCallback } from 'hooks.macro';
+useAutoCallback(() => {
+  doSomethingWith(value);
+});
+
+//Becomes:
+useCallback(() => {
+  doSomethingWith(value);
+}, [doSomethingWith, value]);
+```
