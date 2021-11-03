@@ -34,3 +34,5 @@ useCallback(() => {
   doSomethingWith(value);
 }, [doSomethingWith, value]);
 ```
+## 滚动修改--var 然后实现动画效果
+https://github.com/triggerjs/trigger
